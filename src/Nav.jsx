@@ -8,7 +8,6 @@ function Nav() {
       <Link to="/">
         <img src="Images/food-hive.png" alt="Food Hive Logo" />
       </Link>
-        {/* <h3>Food<span>Hive</span></h3> */}
       </div>
       <ul className="navlinks">
         <li><Link to="/">Home</Link></li>
