@@ -1,30 +1,3 @@
-// import React from 'react'
-// <style>
-// @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-// </style>
-// import { Link } from 'react-router-dom';
-// function foodPageNav() {
-//   return (
-//     <>
-//         <div className="foodPageNav">
-//    <div className="navlogo">
-// <Link to="/">
-//         <img src="Images/food-hive.png" alt="Food Hive Logo" />
-//       </Link>
-//         </div>
-//         <input type="text" placeholder="    Search..." />
-
-
-//         <ul className="food-link">
-//           <li><a href="#">All</a></li>
-//           <li><a href="#">Categories</a></li>
-//         </ul>
-// </div>
-//     </>
-//   )
-// }
-
-// export default foodPageNav
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';

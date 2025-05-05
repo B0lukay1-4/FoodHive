@@ -1,8 +1,8 @@
 import React from 'react'
-import Body from './Body'
+import Body from '../Pages/Body';
 import Nav from './Nav';
-import FoodCard from './FoodCard'
-import Footer from './Footer'
+import Footer from './Footer';
+import FoodCard from './FoodCard';
 function Home() {
   return (
     <>

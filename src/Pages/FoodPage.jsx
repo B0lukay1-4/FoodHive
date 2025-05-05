@@ -3,9 +3,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegHeart } from 'react-icons/fa';
 import { IoMdAdd } from 'react-icons/io';
-import FoodPageNav from './foodPageNav';
-import Footer from './Footer';
-import './index.css';
+import FoodPageNav from '../Components/foodPageNav';
+import Footer from '../Components/Footer';
+import '../index.css';
 
 function FoodPage() {
   const navigate = useNavigate();

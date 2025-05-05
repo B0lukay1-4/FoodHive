@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {PaystackButton} from "react-paystack";
-import FoodPageNav from './foodPageNav';
+import FoodPageNav from '../Components/foodPageNav';
 import { Link } from 'react-router-dom';
 function OrderPage() {
   const publicKey="pk_test_43283c8cb58ff4f54e3a6aa55cc2a838b926eb20";
