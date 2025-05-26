@@ -96,8 +96,8 @@ const items = [
 const infoItems = [
   { icon: <CiDeliveryTruck  className='icon'/>, label: "Free Delivery", title: "Order now" },
   { icon: <PiCurrencyDollarSimple  className='icon' />, label: "Return & Refund", title: "Money back guaranteed" },
-  { icon: <CiBadgeDollar  className='icon' />    , label: "Hot Soups", title: "Stay Warm" },
-  { icon: <BiSupport   className='icon'/>, label: "Cheesy Pizza", title: "Bite In!" }
+  { icon: <CiBadgeDollar  className='icon' />    , label: "Food Items Worth Payment", title: "Stay Warm" },
+  { icon: <BiSupport   className='icon'/>, label: "24/7 Customer Support", title: "Be at rest!" }
 ];
 
 export default Body;

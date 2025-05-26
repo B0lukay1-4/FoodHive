@@ -3,13 +3,13 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegHeart } from 'react-icons/fa';
 import { IoMdAdd } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 import FoodPageNav from '../Components/foodPageNav';
 import Footer from '../Components/Footer';
 import '../index.css';
 
 function FoodPage() {
   const navigate = useNavigate();
-const counter =0;
 
   const handleOrderNow = (image, title, price, description) => {
     console.log('handleOrderNow called with:', { image, title, price, description });
@@ -25,16 +25,16 @@ const counter =0;
   };
 
   const foodItems = [
-    { id: 1, image: 'Images/ofada-rice.jpg', title: 'Crockpot Delight', description: 'A hearty salad with fresh ingredients.', price: '$10.00' },
-    { id: 2, image: 'Images/Nigerian-fried.jpg', title: 'Nigerian Fried Salad', description: 'Spicy and flavorful.', price: '$12.00' },
-    { id: 3, image: 'Images/Greek-chicken.jpg', title: 'Greek Chicken Salad', description: 'Mediterranean flavors.', price: '$11.00' },
-    { id: 4, image: 'Images/colorful.jpg', title: 'Colorful Veggie Mix', description: 'Vibrant and healthy.', price: '$9.00' },
-    { id: 5, image: 'Images/efor-rice.jpg', title: 'Lovely Rice', description: 'Fresh and delightful.', price: '$8.00' },
-    { id: 6, image: 'Images/ice.jpeg', title: 'Cool Salad', description: 'Chilled and refreshing.', price: '$7.00' },
-    { id: 7, image: 'Images/glass.jpeg', title: 'Glass Bowl Salad', description: 'Elegant and tasty.', price: '$10.00' },
-    { id: 8, image: 'Images/RedPepper.jpg', title: 'Sweet Salad', description: 'A unique dessert salad.', price: '$9.00' },
-    { id: 9, image: 'Images/cake-stand.jpeg', title: 'Sweet Salad', description: 'A unique dessert salad.', price: '$9.00' },
-    { id: 10, image: 'Images/semo.jpg', title: 'Brownie Salad', description: 'A sweet twist.', price: '$11.00' },
+    { id: 1, image: 'Images/ofada-rice.jpg', title: 'Crockpot Delight', description: 'A hearty salad with fresh ingredients.', price: 'NGN 5000' },
+    { id: 2, image: 'Images/Nigerian-fried.jpg', title: 'Nigerian Fried Salad', description: 'Spicy and flavorful.', price: 'NGN 7000' },
+    { id: 3, image: 'Images/Greek-chicken.jpg', title: 'Greek Chicken Salad', description: 'Mediterranean flavors.', price: 'NGN 5000' },
+    { id: 4, image: 'Images/colorful.jpg', title: 'Colorful Veggie Mix', description: 'Vibrant and healthy.', price: 'NGN 5000' },
+    { id: 5, image: 'Images/efor-rice.jpg', title: 'Lovely Rice', description: 'Fresh and delightful.', price: 'NGN 5000' },
+    { id: 6, image: 'Images/plaintain.png', title: 'Beautiful Plantain', description: 'Chilled and refreshing.', price: 'NGN 4000' },
+    { id: 7, image: 'Images/Grilled fish.jpg', title: 'Colorful grilled Fish', description: 'Elegant and tasty.', price: 'NGN 2500' },
+    { id: 8, image: 'Images/moi-moi-rollup.jpg', title: 'Spicy Moi Moi', description: 'A unique dessert salad.', price: 'NGN 4000' },
+    { id: 9, image: 'Images/seafood.jpg', title: 'Crunchy Seafoods', description: 'A unique dessert salad.', price: 'NGN 7000' },
+    { id: 10, image: 'Images/semo.jpg', title: 'Brownie Salad', description: 'A sweet twist.', price: 'NGN 5000' },
   ];
 
   return (
@@ -55,7 +55,9 @@ const counter =0;
               <p className="food-description">{item.description}</p>
               <div className="price-add">
                 <p className="food-price">{item.price}</p>
-                <IoMdAdd className="add" />
+             
+                <IoMdAdd className="add" onClick={() => handleOrderNow(item.image, item.title, item.price, item.description)} />
+                
               </div>
               <button
                 className="add-to-cart"
@@ -82,7 +84,8 @@ const counter =0;
               <p className="food-description">{item.description}</p>
               <div className="price-add">
                 <p className="food-price">{item.price}</p>
-                <IoMdAdd className="add" />
+               <IoMdAdd className="add" onClick={() => handleOrderNow(item.image, item.title, item.price, item.description)} />
+               
               </div>
               <button
                 className="add-to-cart"
@@ -109,7 +112,7 @@ const counter =0;
               <p className="food-description">{item.description}</p>
               <div className="price-add">
                 <p className="food-price">{item.price}</p>
-                <IoMdAdd className="add" />
+              <IoMdAdd className="add" onClick={() => handleOrderNow(item.image, item.title, item.price, item.description)} />
               </div>
               <button
                 className="add-to-cart"

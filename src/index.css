@@ -9,11 +9,7 @@ body{
   display: flex;
   justify-content: space-around;
 }
-/* .navbar .navlogo h3{
-  font-family: "Edu AU VIC WA NT Arrows", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
-} */
+
 
 .navbar .navlogo img{
   width: 200px;
@@ -236,7 +232,7 @@ font-optical-sizing: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 16px;
   width: 300px;
-  height:400px;
+  height:420px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -245,8 +241,8 @@ font-optical-sizing: auto;
 }
 
 .food-image {
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
   
@@ -328,6 +324,39 @@ justify-content: space-between;
     font-size: 20px;
     color: rgb(112, 111, 111);
   }
+  .add-sub {
+  display: flex;
+  margin-left: -30px; 
+  gap: 10px;
+}
+  .add-sub .sub{
+    background-color: white;
+    padding: 15px 45px;
+    cursor: pointer;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease;
+  }
+    .add-sub .addnew{
+    background-color: rgb(238, 98, 5);
+    color: white;
+    padding: 15px 45px;
+    cursor: pointer;
+    margin-right: 20px;
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transition: box-shadow 0.3s ease;
+  }
+  .image-count{
+    display: flex;
+  }
+   .image-count span{
+    margin-top: 19%;
+    margin-left: 10%;
+    font-size: 50px;
+   }
 /* FOODS PAGE */
 .foodPageNav{
   display: flex;
@@ -349,7 +378,9 @@ justify-content: space-between;
 
 }
 .food-link li{
- 
+  font-family: "Edu AU VIC WA NT Arrows", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
   margin-top: 10px;
 }
 .food-link li a{

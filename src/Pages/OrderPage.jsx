@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import {PaystackButton} from "react-paystack";
-import FoodPageNav from '../Components/foodPageNav';
+import { PaystackButton } from 'react-paystack';
 import { Link } from 'react-router-dom';
-function OrderPage() {
-  const publicKey="pk_test_43283c8cb58ff4f54e3a6aa55cc2a838b926eb20";
-  const [orderedItem, setOrderedItem] = useState(null);
+import { IoMdRemove, IoMdAdd } from 'react-icons/io';
 
+function OrderPage() {
+  const publicKey = 'pk_test_43283c8cb58ff4f54e3a6aa55cc2a838b926eb20';
+  const [orderedItem, setOrderedItem] = useState(null);
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [saveDetails, setSaveDetails] = useState(false);
- const [ amount, setAmount] =useState("")
- 
+  const [amount, setAmount] = useState('');
+  const [count, setCount] = useState(0); // State for count
+  const [isLike, setIsLike] = useState(false); // State for isLike
 
-
- const componentProps = {
-   email,
-   amount: Number(amount) * 100,
-   metadata: {
-     username
-   },
-   publicKey,
-   text: "Pay",
-   onSuccess: () => {
-     alert("Transaction Successful");
-   },
-   onClose: () => alert("Are you sure you want to close?")
- };
- 
+  const componentProps = {
+    email,
+    amount: Number(amount) * 100,
+    metadata: {
+      username,
+    },
+    publicKey,
+    text: 'Pay',
+    onSuccess: () => {
+      alert('Transaction Successful');
+    },
+    onClose: () => alert('Are you sure you want to close?'),
+  };
 
   useEffect(() => {
     try {
@@ -38,29 +37,60 @@ function OrderPage() {
     }
   }, []);
 
+  // Handle incrementing count
+  const handleAdd = () => {
+    if (isLike) {
+      setCount(count + 1);
+    } else {
+      setCount(0);
+    }
+    setIsLike(true); // Update isLike to true when adding
+  };
+
+  // Handle decrementing count
+  const handleRemove = () => {
+    if (isLike && count > 0) {
+      setCount(count - 1);
+    } else {
+      setCount(0);
+    }
+    setIsLike(true); // Update isLike to true when removing
+  };
+
+  console.log('Count:', count); // Log count for debugging
+
   return (
     <>
-    <div className="foodPageNav">
+      <div className="foodPageNav">
         <div className="navlogo">
           <Link to="/">
             <img src="Images/food-hive.png" alt="Food Hive Logo" />
           </Link>
         </div>
-</div>
+      </div>
       <div className="order-container">
-     
         <div className="order-first-content">
           <h2>Your Order</h2>
           {orderedItem ? (
             <div className="ordered-item">
-              <img
+              <div className="image-count">
+                 <img
                 src={orderedItem.image}
                 alt={orderedItem.title}
                 className="ordered-item-image"
+                
               />
+              <span>X{count}</span>
+              </div>
+             
               <h3>{orderedItem.title}</h3>
               <p className="ordered-item-description">{orderedItem.description}</p>
               <p className="ordered-item-price">{orderedItem.price}</p>
+              <div className="add-sub">
+                <IoMdRemove className="sub" onClick={handleRemove} />
+               
+                <IoMdAdd className="addnew" onClick={handleAdd} />
+              </div>
             </div>
           ) : (
             <p>No item selected.</p>
@@ -79,7 +109,6 @@ function OrderPage() {
           />
           <br />
           <br />
-
           <input
             type="text"
             className="input_field"
@@ -107,11 +136,7 @@ function OrderPage() {
             <p>Save details for future booking</p>
           </div>
           <br />
-          <PaystackButton
-  className="order-btn"
-  {...componentProps}
-/>
-
+          <PaystackButton className="order-btn" {...componentProps} />
         </div>
       </div>
     </>
