@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PaystackButton } from 'react-paystack';
 import { Link } from 'react-router-dom';
 import { IoMdRemove, IoMdAdd } from 'react-icons/io';
+import generateInvoice from '../Components/generateInvoice';
 
 function OrderPage() {
   const publicKey = 'pk_test_43283c8cb58ff4f54e3a6aa55cc2a838b926eb20';
@@ -18,12 +19,30 @@ function OrderPage() {
     amount: Number(amount) * 100,
     metadata: {
       username,
+    
     },
     publicKey,
     text: 'Pay',
-    onSuccess: () => {
-      alert('Transaction Successful');
-    },
+  onSuccess: (response) => {
+  alert('Transaction Successful');
+
+   console.log("Username:", username);
+  console.log("Amount:", amount);
+   
+
+
+  const orderDetails = {
+    id: response.reference,
+    customerName: username, // <- replace with actual name if needed
+    email: email,
+    amount:parseFloat(amount), // convert kobo to naira
+     title: orderedItem?.title || "N/A",
+  };
+
+  console.log("ORDER DETAILS:", orderDetails); // <-- Debug: Check if values exist
+  generateInvoice(orderDetails);
+},
+
     onClose: () => alert('Are you sure you want to close?'),
   };
 
@@ -67,6 +86,14 @@ function OrderPage() {
             <img src="Images/food-hive.png" alt="Food Hive Logo" />
           </Link>
         </div>
+        <ul className='food-link orderfood'>
+ <li>
+      <Link to="/food">
+        Food
+      </Link>
+      </li>
+        </ul>
+        
       </div>
       <div className="order-container">
         <div className="order-first-content">

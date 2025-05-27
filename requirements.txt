@@ -4,3 +4,7 @@ For the installation of the package for react icons run
 For the installtion of the packge for paystack(payment gateway) run
 
 
+To Generate a PDF Invoice After Payment run
+npm install pdf-lib
+
+

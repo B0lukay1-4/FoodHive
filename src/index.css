@@ -364,11 +364,7 @@ justify-content: space-between;
 .foodPageNav .navlogo{
   margin-left: 10%;
 }
-/* .foodnav .navlogo h3{
-  font-family: "Edu AU VIC WA NT Arrows", cursive;
-  font-optical-sizing: auto;
-  font-style: normal;
-} */
+
  .foodPageNav .navlogo img{
   width: 200px;
  } 
@@ -463,6 +459,9 @@ cursor: pointer;
 background-color: #ee6205;
 color: white;
 border: none;
+ }
+ .orderfood{
+  margin-left: 50%;
  }
  /* ORDERIMAGE,DESCRIPTION,PRICE */
  .ordered-item {
