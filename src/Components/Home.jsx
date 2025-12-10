@@ -8,7 +8,7 @@ function Home() {
     <>
     <Nav/>
     <Body/>
-    <FoodCard/>
+  
     <Footer/>
     </>
   )

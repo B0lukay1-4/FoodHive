@@ -8,15 +8,15 @@ const generateInvoice = (order) => {
 
   doc.setFontSize(12);
   doc.text(`Order ID: ${order.id}`, 20, 40);
-  
   doc.text(`Customer Name: ${order.customerName}`, 20, 50);
   doc.text(`Email: ${order.email}`, 20, 60);
 
+  // Show item name with quantity
+  
+  doc.text(`Food Item: ${order.title} x${order.quantity}`, 20, 70);
 
-  doc.text(`Food Item: ${order.title}`, 20, 70);
 
-    doc.text(`Amount Paid: ₦${order.amount}`, 20, 80);
-
+  doc.text(`Amount Paid: ₦${order.amount}`, 20, 80);
   doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 90);
 
   doc.text("Thank you for your order!", 20, 100);

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaRegHeart } from 'react-icons/fa';
+import { FaRegHeart,FaHeart  } from 'react-icons/fa';
 import { IoMdAdd } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 import FoodPageNav from '../Components/foodPageNav';
@@ -11,18 +11,32 @@ import '../index.css';
 function FoodPage() {
   const navigate = useNavigate();
 
-  const handleOrderNow = (image, title, price, description) => {
-    console.log('handleOrderNow called with:', { image, title, price, description });
-    const item = { image, title, price, description };
-    try {
-      localStorage.setItem('orderedItem', JSON.stringify(item));
-      console.log('Item stored in localStorage:', localStorage.getItem('orderedItem'));
-      navigate('/order');
-      console.log('Navigating to /orderpage');
-    } catch (error) {
-      console.error('Error in handleOrderNow:', error);
-    }
-  };
+ const handleOrderNow = (image, title, price, description) => {
+  console.log('handleOrderNow called with:', { image, title, price, description });
+
+ 
+  const numericPrice = price.replace(/[^\d.]/g, ''); 
+
+  const item = { image, title, price: numericPrice, description };
+
+  try {
+    localStorage.setItem('orderedItem', JSON.stringify(item));
+    console.log('Item stored in localStorage:', localStorage.getItem('orderedItem'));
+    navigate('/order');
+    console.log('Navigating to /orderpage');
+  } catch (error) {
+    console.error('Error in handleOrderNow:', error);
+  }
+};
+
+const [favorites, setFavorites] = React.useState({});
+const toggleFavorite = (id) => {
+  setFavorites((prev) => ({
+    ...prev,
+    [id]: !prev[id], // toggle true/false
+  }));
+};
+
 
   const foodItems = [
     { id: 1, image: 'Images/ofada-rice.jpg', title: 'Crockpot Delight', description: 'A hearty salad with fresh ingredients.', price: 'NGN 5000' },
@@ -50,7 +64,13 @@ function FoodPage() {
             <div className="food-details">
               <div className="title-like">
                 <h3 className="food-title">{item.title}</h3>
-                <FaRegHeart className="favourite" />
+                  <div onClick={() => toggleFavorite(item.id)}>
+                      {favorites[item.id] ? (
+                        <FaHeart className="favourite" style={{ color: "red" }} />
+                      ) : (
+                        <FaRegHeart className="favourite" />
+                      )}
+                  </div>
               </div>
               <p className="food-description">{item.description}</p>
               <div className="price-add">
@@ -79,7 +99,13 @@ function FoodPage() {
             <div className="food-details">
               <div className="title-like">
                 <h3 className="food-title">{item.title}</h3>
-                <FaRegHeart className="favourite" />
+                    <div onClick={() => toggleFavorite(item.id)}>
+                      {favorites[item.id] ? (
+                      <FaHeart className="favourite" style={{ color: "red" }} />
+                      ) : (
+                      <FaRegHeart className="favourite" />
+                      )}
+                    </div>
               </div>
               <p className="food-description">{item.description}</p>
               <div className="price-add">
@@ -107,7 +133,13 @@ function FoodPage() {
             <div className="food-details">
               <div className="title-like">
                 <h3 className="food-title">{item.title}</h3>
-                <FaRegHeart className="favourite" />
+                    <div onClick={() => toggleFavorite(item.id)}>
+      {favorites[item.id] ? (
+        <FaHeart className="favourite" style={{ color: "red" }} />
+      ) : (
+        <FaRegHeart className="favourite" />
+      )}
+    </div>
               </div>
               <p className="food-description">{item.description}</p>
               <div className="price-add">

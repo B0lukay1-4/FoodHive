@@ -32,32 +32,16 @@ function FoodPageNav({ onSearch, onCategoryChange }) {
             <img src="Images/food-hive.png" alt="Food Hive Logo" />
           </Link>
         </div>
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchQuery}
-          onChange={handleSearch}
-        />
+        
         <ul className="food-link">
           <li>
             <Link
               to="#"
-              onClick={() => handleCategory('All')}
-              className={selectedCategory === 'All' ? 'active' : ''}
             >
               All
             </Link>
           </li>
          
-          <li>
-            <Link
-              to="#"
-              onClick={() => handleCategory('Drinks')}
-              className={selectedCategory === 'Drinks' ? 'active' : ''}
-            >
-              Categories
-            </Link>
-          </li>
         </ul>
       </div>
     </>

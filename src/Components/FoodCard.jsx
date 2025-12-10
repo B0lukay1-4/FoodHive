@@ -1,5 +1,6 @@
 import React from 'react'
 import { FaRegHeart, FaHeart } from "react-icons/fa";
+
 import { IoMdAdd } from 'react-icons/io';
 import { useNavigate } from 'react-router-dom';
 function FoodCard() {
@@ -22,6 +23,7 @@ function FoodCard() {
     <>
     <div className="cardfood">
     <div className="food-card">
+     
       <img
         src="Images/round.webp"
         alt="Food Item"
@@ -31,6 +33,7 @@ function FoodCard() {
       <div className="title-like">
               <h3 className="food-title">Rounded Spice</h3>
               <FaRegHeart className="favourite" />
+              
               </div>
       <p className="food-description">Hat White Rice</p>
       <div className="price-add">

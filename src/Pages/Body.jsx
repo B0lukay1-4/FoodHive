@@ -32,10 +32,10 @@ function Body() {
         <div className="text-content">
           <h6>____ FRESH & DELICIOUS</h6>
           <h3>
-            <span>Delicious</span> Meal <br /> and <span>Cofetionaries</span>
+            <span>Delicious</span> Meal <br /> and <span>Confectionery </span>
           </h3>
           <p>
-            Enjoy fresh, flavorful meals and cofentionaries made with the finest ingredients.
+            Enjoy fresh, flavorful meals and confectionery  made with the finest ingredients.
           </p>
           <br />
           <button className="btn">Order Now</button>
@@ -61,10 +61,8 @@ function Body() {
         <ul className="third-image-content">
           {items.map((item, index) => (
             <li key={index}>
-              <a href="#">
-                <img src={item.image} className="hover-glow" alt={item.text} width={160} height={160} />
-              </a>
-              <h3>{item.text}</h3>
+                <img src={item.image} className="hover-glow" alt={item.text} width={200} height={200} />
+                <h3>{item.text}</h3>
             </li>
           ))}
         </ul>
@@ -79,18 +77,16 @@ function Body() {
           />
         ))}
       </div>
-<div className="suggested-items">
- <h4>Suggested <span>Products</span></h4>
-</div>
+
     </>
   )
 }
 
 const items = [
-  { image: '/Images/fried-rice.jpg', text: 'Special Fried rice' },
-  { image: '/Images/easy.jpg', text: 'Cake' },
-  { image: '/Images/king.jpg', text: 'Burger' },
-  { image: '/Images/pizza.jpg', text: 'Pizza' }
+  { image: '/Images/spaghetti.jpeg', text: 'Special Pasta' },
+  { image: '/Images/chickenmeal.jpg', text: 'Tasty chicken' },
+  { image: '/Images/poundo.jpeg', text: 'Ikorodu Spicy Poundo' },
+  { image: '/Images/Roastseafood.jpg', text: 'Abuja fired seafood' }
 ];
 
 const infoItems = [
