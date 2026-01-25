@@ -365,6 +365,14 @@ list-style: none;
   border-radius: 10px;
   border: none;
 }
+.cart-notification{
+  background-color: rgb(250, 240, 234);
+  width: 250px;
+  padding: 13px;
+  border-radius: 5px;
+  box-shadow: 0 2px 20px rgb(150, 150, 150);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .foodheader-text {
   margin-top: 5%;
   margin-left: 11%;
@@ -407,10 +415,13 @@ font-optical-sizing: auto;
   display: flex;
 }
 .input_field{
-  width:110% ;
+  width:80% ;
   border: none;
-  background-color:    rgb(250, 240, 234);
+ 
   border: 1px solid rgb(178, 178, 178);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 6px;
 }
 .short-input_field{
   width: 40%;

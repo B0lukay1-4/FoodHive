@@ -29,12 +29,28 @@ function FoodPage() {
   }
 };
 
+
 const [favorites, setFavorites] = React.useState({});
 const toggleFavorite = (id) => {
   setFavorites((prev) => ({
     ...prev,
     [id]: !prev[id], // toggle true/false
   }));
+
+    return [
+      ...prev,
+      {
+        id: item.id,
+        image: item.image,
+        title: item.title,
+        price: Number(item.price.replace(/[^\d]/g, '')), // ✅ NUMBER
+        quantity: 1,
+      },
+    ];
+  };
+
+  setNotification(`${item.title} added to cart`);
+  setTimeout(() => setNotification(''), 2000);
 };
 
 
@@ -159,6 +175,6 @@ const toggleFavorite = (id) => {
       <Footer />
     </>
   );
-}
+
 
 export default FoodPage;
