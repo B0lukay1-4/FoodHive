@@ -124,6 +124,8 @@ const handleCheckout = () => {
         cartItems,
         subtotal,
       });
+       setCartItems([]);              // clear state
+    localStorage.removeItem("cart"); // clear storage
     },
     () => {
       alert('Payment cancelled');
@@ -136,6 +138,7 @@ const handleCheckout = () => {
       <div className="cart-overlay" onClick={onClose}></div>
 
       <div className="cart-sidebar">
+        <div className="cart-inner">
         <button className="close-cart" onClick={onClose}>×</button>
 
         <h2>Your Cart</h2>
@@ -168,7 +171,7 @@ const handleCheckout = () => {
                   </div>
 
                   <div className="item-total">
-                    <span>Item total:</span>
+                    <span>Item total: </span>
                     ₦{(item.price * item.quantity).toLocaleString()}
                   </div>
                 </div>
@@ -225,10 +228,10 @@ const handleCheckout = () => {
 
             <div className="checkout-form">
           
-</div>
+            </div>
           </>
         )}
-        
+        </div>
       </div>
     </>
   );

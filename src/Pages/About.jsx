@@ -12,7 +12,7 @@ function About() {
         <p>Experience the richness of Nigeria on a plate timeless recipes, bold flavors, unforgettable taste.</p>
         </div>
         <div className="about-image-story">
-          <img src="Images/naija.jpg" alt=""  width={650} height={450}/>
+          <img src="Images/naija.jpg" alt="" className='story-image'  />
 
           <div className="story">
             <h1>Our Story</h1>

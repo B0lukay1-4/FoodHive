@@ -8,7 +8,6 @@ function Home() {
     <>
     <Nav/>
     <Body/>
-  
     <Footer/>
     </>
   )

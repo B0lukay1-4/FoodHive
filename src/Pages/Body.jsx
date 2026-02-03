@@ -41,42 +41,40 @@ function Body() {
           <button className="btn">Order Now</button>
         </div>
         <div className="image-content">
-          <img src="Images/african-food.jpg" width={500} height={400} />
+            <img src="Images/african-food.jpg" className="hero-image" />
         </div>
       </div>
 
       <div className="second-content">
         <div className="second-text">
-          <h3>Our <span>Popular</span> Items</h3>
-          <p>Try our popular items, crafted with fresh irresistible flavors</p>
+          <h3>Explore <span>Our</span>  Menu</h3>
+          <p>Try our menu, crafted with fresh irresistible flavors</p>
         </div>
         <div className="second-button">
         <Link to="/food">
-          <button className="btn">View All &#8594;</button>
+          <button className="btn view-btn">View All &#8594;</button>
            </Link>
         </div>
       </div>
 
-      <div className="third-content">
-        <ul className="third-image-content">
-          {items.map((item, index) => (
-            <li key={index}>
-                <img src={item.image} className="hover-glow" alt={item.text} width={200} height={200} />
-                <h3>{item.text}</h3>
-            </li>
-          ))}
-        </ul>
+      <div className="popular-section">
+  <h2 className="section-title"></h2>
+
+  <div className="category-grid">
+    {categories.map((item, index) => (
+      <div className="category-card" key={index}>
+        <img src={item.image} alt={item.title} />
+        <div className="overlay">
+          <h3>{item.title}</h3>
+          <p>{item.tags}</p>
+        </div>
       </div>
-      <div className="fourth-content">
-        {infoItems.map((item, index) => (
-          <InfoCard
-            key={index}
-            icon={item.icon}
-            label={item.label}
-            title={item.title}
-          />
-        ))}
-      </div>
+    ))}
+  </div>
+</div>
+
+
+      
 
     </>
   )
@@ -86,14 +84,26 @@ const items = [
   { image: '/Images/spaghetti.jpeg', text: 'Special Pasta' },
   { image: '/Images/chickenmeal.jpg', text: 'Tasty chicken' },
   { image: '/Images/poundo.jpeg', text: 'Ikorodu Spicy Poundo' },
-  { image: '/Images/Roastseafood.jpg', text: 'Abuja fired seafood' }
+  // { image: '/Images/Roastseafood.jpg', text: 'Abuja fired seafood' }
 ];
 
-const infoItems = [
-  { icon: <CiDeliveryTruck  className='icon'/>, label: "Free Delivery", title: "Order now" },
-  { icon: <PiCurrencyDollarSimple  className='icon' />, label: "Return & Refund", title: "Money back guaranteed" },
-  { icon: <CiBadgeDollar  className='icon' />    , label: "Food Items Worth Payment", title: "Stay Warm" },
-  { icon: <BiSupport   className='icon'/>, label: "24/7 Customer Support", title: "Be at rest!" }
+
+const categories = [
+  {
+    image: "/Images/spaghetti.jpeg",
+    title: "Seafood Specials",
+    tags: "Breakfast, Dinner, Favorites, Quick Snacks",
+  },
+  {
+    image: "/Images/chickenmeal.jpg",
+    title: "Desserts That Melt Hearts",
+    tags: "Breakfast, Dinner, Favorites, Quick Snacks",
+  },
+  {
+    image: "/Images/poundo.jpeg",
+    title: "Refreshing Beverages & Mocktails",
+    tags: "Breakfast, Dinner, Favorites, Quick Snacks",
+  },
 ];
 
 export default Body;
