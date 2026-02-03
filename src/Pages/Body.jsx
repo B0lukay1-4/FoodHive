@@ -80,18 +80,13 @@ function Body() {
   )
 }
 
-const items = [
-  { image: '/Images/spaghetti.jpeg', text: 'Special Pasta' },
-  { image: '/Images/chickenmeal.jpg', text: 'Tasty chicken' },
-  { image: '/Images/poundo.jpeg', text: 'Ikorodu Spicy Poundo' },
-  // { image: '/Images/Roastseafood.jpg', text: 'Abuja fired seafood' }
-];
+
 
 
 const categories = [
   {
-    image: "/Images/spaghetti.jpeg",
-    title: "Seafood Specials",
+    image: "/Images/ice-cocktail.jpg",
+    title: "Refreshing Beverages & Mocktails",
     tags: "Breakfast, Dinner, Favorites, Quick Snacks",
   },
   {
@@ -100,8 +95,8 @@ const categories = [
     tags: "Breakfast, Dinner, Favorites, Quick Snacks",
   },
   {
-    image: "/Images/poundo.jpeg",
-    title: "Refreshing Beverages & Mocktails",
+    image: "/Images/delicious-lobster.jpg",
+    title: "Seafood Specials",
     tags: "Breakfast, Dinner, Favorites, Quick Snacks",
   },
 ];
