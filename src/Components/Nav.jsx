@@ -3,8 +3,6 @@ import { useState } from 'react';
 import "../index.css";
 import { IoMdClose } from "react-icons/io";
 import { RxHamburgerMenu } from "react-icons/rx";
-{/* <RxHamburgerMenu /> */}
-{/* <IoMdClose /> */}
 import { Link } from 'react-router-dom';
 function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
