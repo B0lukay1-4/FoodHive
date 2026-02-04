@@ -582,11 +582,11 @@ span {
 
 .food-header {
   display: flex;
-  justify-content: space-between; /* THIS pushes left & right apart */
+  justify-content: space-between; 
   align-items: center;
   padding: 20px 8%;
   
-  position: sticky;   /* makes it stay visible */
+  position: sticky;   
   top: 0;
   z-index: 800;
 }
