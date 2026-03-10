@@ -15,9 +15,7 @@ const CartSidebar = ({
   username, setUsername,
   phone, setPhone,
 }) => {
-  // =====================
-  // Cart Controls
-  // =====================
+
   const increaseQty = (id) => {
     setCartItems((prev) =>
       prev.map((item) =>
@@ -40,25 +38,25 @@ const CartSidebar = ({
     setCartItems((prev) => prev.filter((item) => item.id !== id));
   };
 
-  // =====================
+  
   // Validation
-  // =====================
+  
   const isValidName = (name) => /^[A-Za-z\s]{2,}$/.test(name.trim());
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   const isValidPhone = (phone) =>
     /^0\d{10}$/.test(phone) && !/^0{11}$/.test(phone);
 
-  // =====================
+  
   // Total
-  // =====================
+  
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
 
-  // =====================
+  
   // Validate before Paystack opens
-  // =====================
+
   const handleBeforePaystack = (e) => {
     if (!username || !email || !phone) {
       e.preventDefault();
@@ -87,17 +85,14 @@ const CartSidebar = ({
     }
   };
 
-  // =====================
-  // Payment SUCCESS — fires reliably with PaystackButton
-  // =====================
+ 
   const handlePaystackSuccess = async (response) => {
     console.log("✅ Payment SUCCESS:", response);
 
-    // Snapshot current cart for invoice
     const itemsSnapshot = [...cartItems];
     const totalSnapshot = subtotal;
 
-    // 1. Generate invoice
+
     try {
       generateInvoice({
         customerName: username,
@@ -111,7 +106,7 @@ const CartSidebar = ({
       console.error("Invoice error:", err);
     }
 
-    // 2. Delete from Supabase
+    // To Delete from Supabase
     const { error } = await supabase
       .from("cart")
       .delete()
@@ -123,7 +118,7 @@ const CartSidebar = ({
       console.log("✅ Cart deleted from Supabase");
     }
 
-    // 3. Clear React state
+    // To Clear React state
     setCartItems([]);
     setUsername("");
     setEmail("");
@@ -134,16 +129,16 @@ const CartSidebar = ({
     onClose();
   };
 
-  // =====================
+ 
   // Payment CLOSED without paying
-  // =====================
+
   const handlePaystackClose = () => {
     console.log("Payment closed without completing");
   };
 
-  // =====================
+ 
   // Paystack Button Config
-  // =====================
+  
   const paystackConfig = {
     reference: new Date().getTime().toString(),
     email: email || "",
