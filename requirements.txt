@@ -7,4 +7,17 @@ For the installtion of the packge for paystack(payment gateway) run
 To Generate a PDF Invoice After Payment run
 npm install pdf-lib
 
+# qw9KWYksoPP3hVn7
 
+# PROJECT URL
+# https://irmpvzqdtbcofspghoxf.supabase.co
+
+
+Using supabase to store the cart items temporarily then when the user checksout the cart clears
+
+Add item → saved to Supabase instantly
+Refresh page → cart reloads from Supabase, nothing lost
+Successful payment → Supabase row deleted, cart cleared, invoice downloads
+Close tab → session ID is gone, Supabase row stays but will never load again (you can set up a cron to clean old rows later)
+
+npm install @supabase/supabase-js
